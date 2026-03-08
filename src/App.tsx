@@ -335,9 +335,9 @@ export default function App() {
 
   // AI Generation
   const generateImage = async (type: 'bg' | 'fg' | 'both') => {
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
     if (!apiKey) {
-      alert("Missing Gemini API Key in environment variables.");
+      alert("Missing VITE_GEMINI_API_KEY. Please add it to your .env file or GitHub Secrets.");
       return;
     }
 
